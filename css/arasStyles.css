@@ -55,7 +55,7 @@ overflow : hidden;
 font-size: 1em;
 }
 
-input{
+#arasContact input{
     color: #000000;
 }
 
@@ -78,7 +78,7 @@ margin-left: 1em; margin-right: 1em;
 #videolist a 
 {
 text-decoration: none;
-color: #000000;
+color: #ffffff;
 }
 
 #videoplayer iframe 
@@ -89,13 +89,13 @@ min-height: 50%;
 
 .background
 {
-background-color:#FFF8DC;
+background-color:#606060;
 }
 
 
 .backgroundForm
 {
-background-color:#FFF8DC;
+background-color:#606060;
 -moz-border-radius: 15px;
 border-radius: 15px;
 }
@@ -106,7 +106,7 @@ border-radius: 15px;
 margin:5px;
 padding:20px;
 padding-top:5px;
-background-color:#FFF8DC;
+background-color:#606060;
 -moz-border-radius: 10px;
 border-radius: 15px;
 }
@@ -155,7 +155,7 @@ max-width:70%;
 {
 
 
-min-height:600px;
+min-height:200px;
 
 }
 
