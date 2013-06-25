@@ -344,20 +344,20 @@ if (val.categories[0].title =='otherMusicClasses')
 {
 
 otherMusicClasses+='<p>'+excerpt+'</p>';
-otherMusicClasses+='<img src="'+val.thumbnail+'" width="350" height=400" alt ="'+val.title+'" />';
+otherMusicClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
 
 if (val.categories[0].title =='classes')
 {
-morningClasses+='<img src="'+val.thumbnail+'" width="350" height=400" alt ="'+val.title+'" />';
+morningClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
 if (val.categories[0].title =='eveningclasses')
 {
-eveningClasses+='<img src="'+val.thumbnail+'" width="350" height=400" alt ="'+val.title+'" />';
+eveningClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
 if (val.categories[0].title =='music')
 {
-musicClasses+='<img src="'+val.thumbnail+'" width="350" height=400" alt ="'+val.title+'" />';
+musicClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
 if (val.categories[0].title =='setdancing')
 {
@@ -382,7 +382,7 @@ venueHire+=''+val.content+'';
 if (val.categories[0].title =='whyJoin')
 {
 whyJoin+=''+val.content+'';
-whyJoin+='<img class="homeImage" src="'+val.thumbnail+'" width="350" height=400" alt ="'+val.title+'" />';
+whyJoin+='<img class="homeImage" src="'+val.thumbnail+'" width="90%" height=90%" alt ="'+val.title+'" />';
 }
 if (val.categories[0].title =='howToApply')
 {
