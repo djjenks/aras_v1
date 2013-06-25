@@ -335,7 +335,7 @@ output+='<p>'+excerpt+'</p>';
 
 
 
-output+='<img src="'+val.thumbnail+'" alt ="'+val.title+'" />';
+output+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 output+='</div>';
 
 }
