@@ -1,5 +1,5 @@
 $('#send-feedback').live("click", function() {
-	var url = 'api/send.php';
+	var url = 'http://www.webelevate06.com/app/Aras_v5/api/send.php';
 	var error = 0;
 	var $contactpage = $(this).closest('.ui-page');
 	var $contactform = $(this).closest('.contact-form');
