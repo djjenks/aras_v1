@@ -55,6 +55,10 @@ overflow : hidden;
 font-size: 1em;
 }
 
+input{
+    color: #000000;
+}
+
 #home h1
  {
 
