@@ -242,7 +242,7 @@ $('#add17,#add27,#add37,#add47').fadeIn('slow');
 //
 
 //  new page control
-$( document ).delegate("#irishClasses", "pageinit", function() {
+$( document ).delegate("#arasContact", "pageinit", function() {
   //alert('A page with an id of "aboutPage" was just created by jQuery Mobile!');
   var o =document.getElementsByClassName('ui-icon-check');
 
