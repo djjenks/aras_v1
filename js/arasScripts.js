@@ -272,24 +272,24 @@ $('#add18,#add28,#add38,#add48').fadeIn('slow');
 //
 
 
-function setupPages()
+//function setupPages()
 
-{
+//{
 //window.alert("page 7 Button Clicked!");
-$(function() {
-  setTimeout(hideSplash, 3000);
-});
+//$(function() {
+//  setTimeout(hideSplash, 3000);
+//});
 
-function hideSplash() {
-  $.mobile.changePage("#home", "fade");
-}
+//function hideSplash() {
+ // $.mobile.changePage("#home", "fade");
+//}
 
  //var pageheight=$(#home).height();
 //window.alert("height of the page is"+pageheight);
 
 
 
-}
+//}
 
 function showMyVideos(data) 
 {
