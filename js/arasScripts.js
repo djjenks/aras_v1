@@ -298,8 +298,8 @@ var category = console.log(data.posts[0].categories[0].title);
 console.log(data);
 
 
-var morningClasses = "<ul>";
-var eveningClasses = "<ul>";
+var morningClasses = "";
+var eveningClasses = "";
 var musicClasses = "<ul>";
 var otherMusicClasses = "<ul>";
 var SetDancingClasses = "";
@@ -391,8 +391,8 @@ howToApply+=''+val.content+'';
 }
 });
 output+='</div>';
-morningClasses+='</ul>';
-eveningClasses+='</ul>';
+morningClasses+='';
+eveningClasses+='';
 musicClasses+='</ul>';
 otherMusicClasses+='</ul>';
 SetDancingClasses += '';
