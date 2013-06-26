@@ -65,7 +65,18 @@ font-size: 1em;
 font-size: 1em;
 }
 
- #home .ui-header .ui-title 
+ #home .ui-header .ui-title, 
+  #Events .ui-header .ui-title, 
+   #Classes .ui-header .ui-title, 
+    #Facilities .ui-header .ui-title, 
+     #FindUs .ui-header .ui-title, 
+      #Membership .ui-header .ui-title, 
+       #arasContact .ui-header .ui-title,
+        #irishClasses .ui-header .ui-title, 
+         #musicClasses .ui-header .ui-title, 
+          #setDanceClasses .ui-header .ui-title,
+           #Videos .ui-header .ui-title
+           
 { 
 margin-left: 1em; margin-right: 1em; 
 }
