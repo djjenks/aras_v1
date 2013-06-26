@@ -244,13 +244,13 @@ $('#add17,#add27,#add37,#add47').fadeIn('slow');
 //  new page control
 $( document ).delegate("#irishClasses", "pageinit", function() {
   //alert('A page with an id of "aboutPage" was just created by jQuery Mobile!');
-  var m =document.getElementsByClassName('ui-icon-check');
+  var o =document.getElementsByClassName('ui-icon-check');
 
-$(m).removeClass('ui-icon-check').addClass('icon-music');
+$(o).removeClass('ui-icon-check').addClass('icon-music');
 
-var n=document.getElementsByClassName('ui-icon-star');
+var p=document.getElementsByClassName('ui-icon-star');
 
-$(n).removeClass('ui-icon-star').addClass('icon-facetime-video');
+$(p).removeClass('ui-icon-star').addClass('icon-facetime-video');
   $("#buttonId8").removeClass().addClass("ui-grid-c");
 $("#add38,#add78").removeClass().addClass("ui-block-c");
 $("#add48,#add88").removeClass().addClass("ui-block-d");
