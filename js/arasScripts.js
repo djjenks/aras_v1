@@ -349,6 +349,7 @@ otherMusicClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="
 
 if (val.categories[0].title =='classes')
 {
+morningClasses+='<p>'+excerpt+'</p>'';
 morningClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
 if (val.categories[0].title =='eveningclasses')
