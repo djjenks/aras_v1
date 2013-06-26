@@ -210,6 +210,68 @@ $('#add16,#add26,#add36,#add46').fadeIn('slow');
 });
 });
 //
+
+//  new page control
+$( document ).delegate("#irishClasses", "pageinit", function() {
+  //alert('A page with an id of "aboutPage" was just created by jQuery Mobile!');
+  var m =document.getElementsByClassName('ui-icon-check');
+
+$(m).removeClass('ui-icon-check').addClass('icon-music');
+
+var n=document.getElementsByClassName('ui-icon-star');
+
+$(n).removeClass('ui-icon-star').addClass('icon-facetime-video');
+  $("#buttonId7").removeClass().addClass("ui-grid-c");
+$("#add37,#add77").removeClass().addClass("ui-block-c");
+$("#add47,#add87").removeClass().addClass("ui-block-d");
+  
+ $('#fade7').bind("click", function(){
+$('#add17,#add27,#add37,#add47').fadeOut('slow');
+$('#add17,#add27,#add37,#add47').css('display', 'none');
+$('#add57,#add67,#add77,#add87').fadeIn('slow');
+//$('#add5,#add6,#add7,#add8').slideUp('slow');
+});
+
+$('#fade27').bind("click", function(){
+$('#add57,#add67,#add77,#add87').fadeOut('slow');
+$('#add57,#add67,#add77,#add87').css('display', 'none');
+$('#add17,#add27,#add37,#add47').fadeIn('slow');
+
+});
+});
+//
+
+//  new page control
+$( document ).delegate("#irishClasses", "pageinit", function() {
+  //alert('A page with an id of "aboutPage" was just created by jQuery Mobile!');
+  var m =document.getElementsByClassName('ui-icon-check');
+
+$(m).removeClass('ui-icon-check').addClass('icon-music');
+
+var n=document.getElementsByClassName('ui-icon-star');
+
+$(n).removeClass('ui-icon-star').addClass('icon-facetime-video');
+  $("#buttonId8").removeClass().addClass("ui-grid-c");
+$("#add38,#add78").removeClass().addClass("ui-block-c");
+$("#add48,#add88").removeClass().addClass("ui-block-d");
+  
+ $('#fade8').bind("click", function(){
+$('#add18,#add28,#add38,#add48').fadeOut('slow');
+$('#add18,#add28,#add38,#add48').css('display', 'none');
+$('#add58,#add68,#add78,#add88').fadeIn('slow');
+//$('#add5,#add6,#add7,#add8').slideUp('slow');
+});
+
+$('#fade28').bind("click", function(){
+$('#add58,#add68,#add78,#add88').fadeOut('slow');
+$('#add58,#add68,#add78,#add88').css('display', 'none');
+$('#add18,#add28,#add38,#add48').fadeIn('slow');
+
+});
+});
+//
+
+
 function setupPages()
 
 {
