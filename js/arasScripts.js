@@ -33,7 +33,8 @@ $('#add1,#add2,#add3,#add4').fadeIn('slow');
 
 //  new page control
 $( document ).delegate("#Events", "pageinit", function() {
-  //alert('A page with an id of "aboutPage" was just created by jQuery Mobile!');
+  //windows.alert('A page with an id of "aboutPage" was just created by jQuery Mobile!');
+  //window.alert("events")
  var a =document.getElementsByClassName('ui-icon-check');
 
 $(a).removeClass('ui-icon-check').addClass('icon-music');
@@ -272,24 +273,41 @@ $('#add18,#add28,#add38,#add48').fadeIn('slow');
 //
 
 
-//function setupPages()
+function setupPages()
 
-//{
-//window.alert("page 7 Button Clicked!");
-//$(function() {
-//  setTimeout(hideSplash, 3000);
-//});
-
+{
+var i = 0;
+var category = "";
+var category1 = "";
 //function hideSplash() {
  // $.mobile.changePage("#home", "fade");
 //}
 
  //var pageheight=$(#home).height();
-//window.alert("height of the page is"+pageheight);
+//window.alert("height of the page is");
+//window.alert(data.ip)
+console.log('test');
 
 
+$.ajax({
+		dataType: "json",
+		url: "https://public-api.wordpress.com/rest/v1.1/sites/djjenkins21.wordpress.com/posts/",
+		success: function( responseObject){
+												data = responseObject;
+												// data.posts[0].content
+												console.log(data.posts[0].content ) ;
+												//console.log(data.posts[0].categories.musicSessions.name ) ;
+ 
+												$.each(data.posts[0].categories, function(key, value){
+													category = key;
+												});
+																								
+												listposts(data)
+										  }
+	});
 
-//}
+//window.alert("finish");
+
 
 function showMyVideos(data) 
 {
@@ -352,111 +370,127 @@ function listposts(data)
 {
 
 
+console.log("in listposts function");
 
 
 
 
-var category = console.log(data.posts[0].categories[0].title);
-console.log(data);
+
 
 
 var morningClasses = "";
 var eveningClasses = "";
-var musicClasses = "<ul>";
-var otherMusicClasses = "<ul>";
+var musicClasses = "";
+var otherMusicClasses = "";
 var SetDancingClasses = "";
 var kidsSetDancingClasses = "";
 var musicSessions = "";
 var studioInfo ="";
 var venueHire="";
 var whyJoin ="";
-var howToApply=""
+var howToApply="";
 
-var output='<div data-role="collapsible-set">';
-
+//var output='<div data-role="collapsible-set">';
+var output='';
 
 
 $.each(data.posts,function(key,val){
+	
+	console.log(key,val);
+	
+	$.each(data.posts[i].categories, function(key, value){
 
+													category1 = key;
+													
+													console.log(key,val);
+													
+													console.log("check value 1 "+val.content);
+												});
+console.log("check value 2 "+val.content);												
+var cat = Object.keys(data.posts[i].categories)[0];	
+console.log("check category extra "+cat);
+console.log("check category "+category1);
+console.log("in each loop");
+console.log(i);
 
 var tempDiv = document.createElement("tempDiv");
-tempDiv.innerHTML = val.excerpt;
+tempDiv.innerHTML = category.excerpt;
 $("a",tempDiv).remove();
 var excerpt= tempDiv.innerHTML;
 
 
-if (val.categories[0].title =='arasposts')
+if (category =='arasposts')
 {
+console.log("each condition : "+i);
+//output+='<div class="background" data-role="collapsible">';
 
-output+='<div class="background" data-role="collapsible">';
-
-output+='<h3>'+val.title+'</h3>';
-output+='<p>'+excerpt+'</p>';
-
-
-
-
-
-output+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
-output+='</div>';
-
+//output+='<h3>'+val.title+'</h3>';
+//output+='<p>'+excerpt+'</p>';
+//output+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
+//output+='</div>';
+output+=''+val.content+'';
 }
 
-if (val.categories[0].title =='otherMusicClasses')
+if (category =='otherMusicClasses')
 {
-
-otherMusicClasses+='<p>'+excerpt+'</p>';
-otherMusicClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
+otherMusicClasses+=''+val.content+'';
+//otherMusicClasses+='<p>'+excerpt+'</p>';
+//otherMusicClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
 
-if (val.categories[0].title =='classes')
+if (category =='classes')
 {
-morningClasses+='<p>'+excerpt+'</p>';
-morningClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
+//morningClasses+='<p>'+excerpt+'</p>';
+//morningClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
-if (val.categories[0].title =='eveningclasses')
+if (category =='eveningclasses')
 {
 eveningClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
-if (val.categories[0].title =='music')
+if (category =='music')
 {
 musicClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
+window.alert("in music")
 }
-if (val.categories[0].title =='setdancing')
+if (category =='setdancing')
 {
 SetDancingClasses+=''+val.content+'';
 }
-if (val.categories[0].title =='kidsSetDancing')
+if (category =='kidsSetDancing')
 {
 kidsSetDancingClasses+=''+val.content+'';
 }
-if (val.categories[0].title =='musicSessions')
+if (category1 =='musicSessions')
 {
 musicSessions+=''+val.content+'';
+console.log("in music function");
+
 }
-if (val.categories[0].title =='studioInfo')
+if (category =='studioInfo')
 {
 studioInfo+=''+val.content+'';
 }
-if (val.categories[0].title =='venueHire')
+if (category =='venueHire')
 {
 venueHire+=''+val.content+'';
 }
-if (val.categories[0].title =='whyJoin')
+if (category =='whyJoin')
 {
 whyJoin+=''+val.content+'';
 whyJoin+='<img class="homeImage" src="'+val.thumbnail+'" width="90%" height=90%" alt ="'+val.title+'" />';
 }
-if (val.categories[0].title =='howToApply')
+if (category =='howToApply')
 {
 howToApply+=''+val.content+'';
 }
+
+i =i+1;
 });
-output+='</div>';
+output+='';
 morningClasses+='';
 eveningClasses+='';
-musicClasses+='</ul>';
-otherMusicClasses+='</ul>';
+musicClasses+='';
+otherMusicClasses+='';
 SetDancingClasses += '';
 kidsSetDancingClasses += '';
 musicSessions += "";
@@ -464,6 +498,9 @@ studioInfo +="";
 venueHire +="";
 whyJoin +="";
 howToApply +="";
+
+
+console.log(musicSessions);
 
 $('#eventsList').html(output);
 $('#morningClass').html(morningClasses);
@@ -478,4 +515,6 @@ $('#venueHire').html(venueHire);
 $('#whyJoin').html(whyJoin);
 $('#howToApply').html(howToApply);
 
+
+}
 }
