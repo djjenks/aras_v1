@@ -389,6 +389,7 @@ var studioInfo ="";
 var venueHire="";
 var whyJoin ="";
 var howToApply="";
+var intensive="";
 
 //var output='<div data-role="collapsible-set">';
 var output='';
@@ -400,7 +401,7 @@ $.each(data.posts,function(key,val){
 	
 	$.each(data.posts[i].categories, function(key, value){
 
-													category1 = key;
+													category = key;
 													
 													console.log(key,val);
 													
@@ -408,8 +409,8 @@ $.each(data.posts,function(key,val){
 												});
 console.log("check value 2 "+val.content);												
 var cat = Object.keys(data.posts[i].categories)[0];	
-console.log("check category extra "+cat);
-console.log("check category "+category1);
+//console.log("check category extra "+cat);
+//console.log("check category "+category1);
 console.log("in each loop");
 console.log(i);
 
@@ -441,16 +442,23 @@ otherMusicClasses+=''+val.content+'';
 if (category =='classes')
 {
 //morningClasses+='<p>'+excerpt+'</p>';
+morningClasses+=''+val.content+'';
 //morningClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
 }
 if (category =='eveningclasses')
 {
-eveningClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
+eveningClasses+=''+val.content+'';
 }
+
+if (category =='intensive')
+{
+intensive+=''+val.content+'';
+}
+
 if (category =='music')
 {
-musicClasses+='<img src="'+val.thumbnail+'" width="90%" height="90%" alt ="'+val.title+'" />';
-window.alert("in music")
+musicClasses+=''+val.content+'';
+//window.alert("in music")
 }
 if (category =='setdancing')
 {
@@ -460,7 +468,7 @@ if (category =='kidsSetDancing')
 {
 kidsSetDancingClasses+=''+val.content+'';
 }
-if (category1 =='musicSessions')
+if (category =='musicSessions')
 {
 musicSessions+=''+val.content+'';
 console.log("in music function");
@@ -477,7 +485,7 @@ venueHire+=''+val.content+'';
 if (category =='whyJoin')
 {
 whyJoin+=''+val.content+'';
-whyJoin+='<img class="homeImage" src="'+val.thumbnail+'" width="90%" height=90%" alt ="'+val.title+'" />';
+
 }
 if (category =='howToApply')
 {
@@ -498,7 +506,7 @@ studioInfo +="";
 venueHire +="";
 whyJoin +="";
 howToApply +="";
-
+intensive +="";
 
 console.log(musicSessions);
 
@@ -507,6 +515,7 @@ $('#morningClass').html(morningClasses);
 $('#eveningClass').html(eveningClasses);
 $('#musicClass').html(musicClasses);
 $('#otherMusicClass').html(otherMusicClasses);
+$('#intensive').html(intensive);
 $('#setDancing').html(SetDancingClasses);
 $('#kidsSetDancing').html(kidsSetDancingClasses);
 $('#musicSessions').html(musicSessions);
