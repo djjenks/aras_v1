@@ -2,8 +2,8 @@
 
   <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        versionCode = "61" 
-        version     = "1.0.61" >
+        versionCode = "62" 
+        version     = "1.0.62" >
 
     <!-- versionCode is optional and Android only -->
 	<!-- <gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.1" /> -->
