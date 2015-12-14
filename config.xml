@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.aras_test"
+        id        = "com.phonegap.arastestt"
         version   = "1.0.63">
-<name>DavidAras</name>
+<name>arastestt</name>
 </widget>
