@@ -6,6 +6,6 @@
         version     = "1.0.61" >
 
     <!-- versionCode is optional and Android only -->
-	<gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.1" />
+	<!-- <gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.1" /> -->
 
 </widget>
