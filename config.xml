@@ -3,7 +3,7 @@
   <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         versionCode = "62" 
-		id          = "com.phonegap.aras_test"
+         id          = "com.phonegap.aras_test"
         version     = "1.0.62" >
 		
 		<name>PhoneGap Example</name>
