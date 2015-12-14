@@ -2,6 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.arastestt"
+        versionCode = "66"
         version   = "1.0.63">
 <name>arastestt</name>
 </widget>
