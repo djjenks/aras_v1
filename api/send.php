@@ -38,15 +38,15 @@ Sent: $today
 	$message .= "Mobile: ".$mobilephone."\r\n";
 	$message .= "Query: ".$message1;
 	$header = "From: ". $firstname . " <" . $email . ">\r\n"; 		
-	//$headers = "From: $from_add \r\n";
-	//$headers .= "Reply-To: $from_add \r\n";
-	//$headers .= "Return-Path: $from_add\r\n";
-	//$headers .= "X-Mailer: PHP \r\n";
+	$headers = "From: $from_add \r\n";
+	$headers .= "Reply-To: $from_add \r\n";
+	$headers .= "Return-Path: $from_add\r\n";
+	$headers .= "X-Mailer: PHP \r\n";
 	
-	//if (mail($recipient, $subject, $mailbody, $header)) {
-	//	echo json_encode($result);
-		//$result = 'success';
-	//	}
+	if (mail($recipient, $subject, $mailbody, $header)) {
+		echo json_encode($result);
+		$result = 'success';
+		}
 	
 	if(mail($to_add,$subject,$message,$header)) 
 	{
