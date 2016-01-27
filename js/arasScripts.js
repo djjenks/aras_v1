@@ -273,6 +273,123 @@ $('#add18,#add28,#add38,#add48').fadeIn('slow');
 //
 
 
+$(document).ready(function(){
+
+$.get(
+"https://www.googleapis.com/youtube/v3/channels",{
+	
+	part: 'contentDetails',
+	forUsername: 'ARASCHRONAIN',
+	key: 'AIzaSyAuRY6bVi1LTbSQu6wGb1qm920CzpAExLk'},
+	function(data){
+			$.each(data.items,function(i, item){
+				console.log(item);
+				console.log("Dec test");
+				pid = item.contentDetails.relatedPlaylists.uploads;
+				
+				getVids(pid);
+			})
+			
+		}
+
+); // get closed
+
+function getVids(pid){
+	console.log("in vids");
+	var output9 ='';
+	$.get(
+"https://www.googleapis.com/youtube/v3/playlistItems",{
+	
+	part: 'snippet',
+	maxResults : 10,
+	playlistId : pid,
+	key: 'AIzaSyAuRY6bVi1LTbSQu6wGb1qm920CzpAExLk'},
+	function(data){
+		
+			var outputvideos;
+			//var output9 ='';
+			var checktitle = data.items[0].snippet.title;
+			//window.alert("array",checktitle );
+			$.each(data.items,function(i, item){
+				
+				//
+				
+				var title = item.snippet.title;
+				var thumbnail = item.snippet.thumbnails.medium.url;
+				var id = item.snippet.channelId;
+				var blocktype = ((i % 2)===1) ? 'b':'a';
+				var videoId = item.snippet.resourceId.videoId;
+				
+				console.log("Variable check");
+				console.log(title);
+				console.log(thumbnail);
+				console.log("i =",i);
+				console.log("array =",data.length);
+				console.log(id);
+				console.log("blocktype =",blocktype);
+				
+				
+				//console.log(item);
+				console.log("title test");
+				videTitle = item.snippet.title;
+				console.log(videTitle);
+				//outputvideos = '<li><iframe src ="http://www.youtube.com/embed/'+videoId+'?wmode=transparent&amp;HD=0&amp;rel=0&amp;showinfo=0&amp;controls=1&amp" frameborder="0" allowfullscreen></iframe></li>';
+				
+				
+				output9 += '<div class="ui-block-'+blocktype+'">';
+				output9 +='<div class="backgroundVideo">';
+				//output9 += '<a href="#videoplayer" data-transition="fade" onclick="playVideo(\''+videoId+'\',\''+title+'\')">';
+				output9 += '<a href="#videoplayer" data-transition="fade" onclick="playVideo1(\''+videoId+'\',\''+title+'\')">';
+
+				output9 +='<h3 class="movietitle">'+title+'</h3>';
+				output9 +='<img src="'+thumbnail+'" alt="'+title+'"/>';
+				output9 +="</a>";
+				output9 +="</div>";
+				output9 +="</div>";
+				//output9 +='<iframe src ="https://www.youtube.com/embed/'+videoId+'" ></iframe>';
+				console.log("code output",output9);
+				
+				
+				//$('#videolist').append(outputvideos);
+				//$('#videolist').append(output9);
+				
+			})
+			
+					$('#videolist').append(output9);
+
+			
+		}
+
+		
+);
+}
+
+}); // ready close
+
+
+function playVideo1(id,title)
+{
+	window.alert("function finish");
+	var output5='<div class="backgroundVideo">';
+output5 += '<h3>' + title + '</h3>';
+//output5 += '<h3>hey</h3>';
+output5 +='<p></p>';
+//output5 +='<iframe src ="https://www.youtube.com/watch?v='+id+'?wmode=transparent&amp;HD=0&amp;rel=0&amp;showinfo=0&amp;controls=1&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
+output5 +='<iframe src ="https://www.youtube.com/embed/'+id+'?wmode=transparent&amp;HD=0&amp;rel=0&amp;showinfo=0&amp;controls=1&amp;autoplay=1"  frameborder="0" allowfullscreen></iframe>';
+
+output5 +='</div>';
+//output+='</div>';
+
+
+//var output ='<iframe src ="http://www.youtube.com/embed/'+id+'?wmode=transparent&amp;HD=0&amp;rel=0&amp;showinfo=0&amp;controls=1&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
+//var output ='<iframe  src="http://www.youtube.com/embed/r-KAECwqHPg" frameborder="0" allowfullscreen></iframe>';
+//output += '<h3>' + title + '</h3>';
+$('#myplayer').html(output5);
+
+console.log('vid output5',output5);
+	
+}
+
 function setupPages()
 
 {
@@ -328,7 +445,7 @@ var blocktype = ((i % 2)===1) ? 'b':'a';
 
 output += '<div class="ui-block-'+blocktype+'">';
 output +='<div class="backgroundVideo">';
-output += '<a href="#videoplayer" data-transition="fade" onclick="playVideo(\''+id+'\',\''+title+'\')">';
+//output += '<a href="#videoplayer" data-transition="fade" onclick="playVideo(\''+id+'\',\''+title+'\')">';
 output +='<h3 class="movietitle">'+title+'</h3>';
 output +='<img src="'+thumbnail+'" alt="'+title+'"/>';
 output +="</a>";
@@ -337,29 +454,31 @@ output +="</div>";
 //output +="hello";
 
 }
-$('#videolist').html(output);
+//$('#videolist').html(output);
 
 }
 
-function playVideo(id,title)
+function playVideo()
 {
 
 //console.log(id);
 //console.log(title);
 //var output ='<div data-role="collapsible-set">';
 //output +='<div class="background" data-role="collapsible" data-collapsed="false">';
-var output='<div class="backgroundVideo">';
-output += '<h3>' + title + '</h3>';
-output+='<p></p>';
-output +='<iframe src ="http://www.youtube.com/embed/'+id+'?wmode=transparent&amp;HD=0&amp;rel=0&amp;showinfo=0&amp;controls=1&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
-output+='</div>';
+var output5='<div class="backgroundVideo">';
+output5 += '<h3>' + title + '</h3>';
+output5 +='<p></p>';
+output5 +='<iframe src ="http://www.youtube.com/'+i+'?wmode=transparent&amp;HD=0&amp;rel=0&amp;showinfo=0&amp;controls=1&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
+output5 +='</div>';
 //output+='</div>';
 
 
 //var output ='<iframe src ="http://www.youtube.com/embed/'+id+'?wmode=transparent&amp;HD=0&amp;rel=0&amp;showinfo=0&amp;controls=1&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
 //var output ='<iframe  src="http://www.youtube.com/embed/r-KAECwqHPg" frameborder="0" allowfullscreen></iframe>';
 //output += '<h3>' + title + '</h3>';
-$('#myplayer').html(output);
+$('#myplayer').append(output5);
+
+console.log('vid output5',output5);
 
 }
 
