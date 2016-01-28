@@ -320,19 +320,19 @@ function getVids(pid){
 				var blocktype = ((i % 2)===1) ? 'b':'a';
 				var videoId = item.snippet.resourceId.videoId;
 				
-				console.log("Variable check");
-				console.log(title);
-				console.log(thumbnail);
-				console.log("i =",i);
-				console.log("array =",data.length);
-				console.log(id);
-				console.log("blocktype =",blocktype);
+				//console.log("Variable check");
+				//console.log(title);
+				//console.log(thumbnail);
+				//console.log("i =",i);
+				//console.log("array =",data.length);
+				//console.log(id);
+				//console.log("blocktype =",blocktype);
 				
 				
 				//console.log(item);
-				console.log("title test");
+				//console.log("title test");
 				videTitle = item.snippet.title;
-				console.log(videTitle);
+				//console.log(videTitle);
 				//outputvideos = '<li><iframe src ="http://www.youtube.com/embed/'+videoId+'?wmode=transparent&amp;HD=0&amp;rel=0&amp;showinfo=0&amp;controls=1&amp" frameborder="0" allowfullscreen></iframe></li>';
 				
 				
@@ -347,7 +347,7 @@ function getVids(pid){
 				output9 +="</div>";
 				output9 +="</div>";
 				//output9 +='<iframe src ="https://www.youtube.com/embed/'+videoId+'" ></iframe>';
-				console.log("code output",output9);
+				//console.log("code output",output9);
 				
 				
 				//$('#videolist').append(outputvideos);
@@ -369,7 +369,7 @@ function getVids(pid){
 
 function playVideo1(id,title)
 {
-	window.alert("function finish");
+	//window.alert("function finish");
 	var output5='<div class="backgroundVideo">';
 output5 += '<h3>' + title + '</h3>';
 //output5 += '<h3>hey</h3>';
